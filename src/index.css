@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: "Inter", "sans-serif";
+
+  /* Colors - High contrast Marketika style */
+  --color-brand-black: #0a0a0a;
+  --color-brand-gray: #888888;
+  --color-brand-white: #ffffff;
+
+  /* Animation */
+  --animate-spin-slow: spin 12s linear infinite;
+}
+
+/* Global Styles */
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--color-brand-black);
+  color: var(--color-brand-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
