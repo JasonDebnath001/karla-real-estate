@@ -39,7 +39,7 @@ const Header = () => {
                 href={`#${item.toLowerCase()}`} 
                 className="flex items-center gap-1 hover:text-white/70 transition-colors"
               >
-                <span className="text-white/60 font-light">+</span> {item}
+                <span className="text-white/60 font-light mr-5">+</span> {item}
               </a>
             ))}
           </nav>
