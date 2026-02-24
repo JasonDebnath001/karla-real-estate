@@ -5,6 +5,10 @@ import VisionSection from "./components/VisionSection";
 import FeaturesSection from "./components/FeaturesSection";
 import HorizontalScrollSection from "./components/HorizontalHeroSection";
 import UnlockPotentialSection from "./components/UnlockPotentialSection";
+import HoldingBackSection from "./components/HoldingBackSection";
+import SelectedWorkVertical from "./components/SelectedWorkVertical";
+import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -15,13 +19,11 @@ const App = () => {
       <FeaturesSection />
       <HorizontalScrollSection />
       <UnlockPotentialSection/>
+      <HoldingBackSection />
+      <SelectedWorkVertical />
+      <FAQSection />
+      <Footer />
 
-      {/* Placeholder for next sections */}
-      <div className="h-screen flex items-center justify-center bg-brand-black">
-        <h2 className="text-2xl text-brand-gray">
-          Next Section: Expertise Grid
-        </h2>
-      </div>
     </div>
   );
 };
