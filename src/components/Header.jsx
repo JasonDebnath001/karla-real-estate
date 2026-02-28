@@ -36,7 +36,7 @@ const Header = () => {
             {['Projects', 'Expertise', 'Insights'].map((item) => (
               <a 
                 key={item} 
-                href={`#${item.toLowerCase()}`} 
+                href={`/${item.toLowerCase()}`} 
                 className="flex items-center gap-1 hover:text-white/70 transition-colors"
               >
                 <span className="text-white/60 font-light mr-5">+</span> {item}
@@ -65,7 +65,7 @@ const Header = () => {
           {['Projects', 'Expertise', 'Insights'].map((item) => (
             <a 
               key={item} 
-              href="#" 
+              href={`/${item.toLowerCase()}`} 
               className="text-2xl uppercase tracking-widest text-white/80"
               onClick={() => setIsMobileMenuOpen(false)}
             >

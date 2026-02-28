@@ -1,30 +1,32 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import VisionSection from "./components/VisionSection";
-import FeaturesSection from "./components/FeaturesSection";
-import HorizontalScrollSection from "./components/HorizontalHeroSection";
-import UnlockPotentialSection from "./components/UnlockPotentialSection";
-import HoldingBackSection from "./components/HoldingBackSection";
-import SelectedWorkVertical from "./components/SelectedWorkVertical";
-import FAQSection from "./components/FAQSection";
 import Footer from "./components/Footer";
+import Home from "./page/Home";
+import Projects from "./page/Projects";
+import Expertise from "./page/Expertise";
+import ScrollToTop from "./components/ScrollToTop";
+import Insights from "./page/Insights";
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-brand-black text-brand-white selection:bg-white selection:text-black">
-      <Header />
-      <Hero />
-      <VisionSection />
-      <FeaturesSection />
-      <HorizontalScrollSection />
-      <UnlockPotentialSection/>
-      <HoldingBackSection />
-      <SelectedWorkVertical />
-      <FAQSection />
-      <Footer />
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-brand-black text-brand-white selection:bg-white selection:text-black">
+        <Header />
 
-    </div>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/expertise" element={<Expertise />} />
+            <Route path="/insights" element={<Insights />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 
