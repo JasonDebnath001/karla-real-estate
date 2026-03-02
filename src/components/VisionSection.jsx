@@ -23,7 +23,8 @@ const VisionSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative z-10 w-full min-h-screen bg-white text-black overflow-hidden pt-24 flex flex-col items-center"
+      // removed min-h-screen to avoid stacking an extra full viewport on top of the image height
+      className="relative z-10 w-full bg-white text-black overflow-hidden pt-24 flex flex-col items-center"
     >
       {/* 1. Main Text Content (z-20 ensures it stays ON TOP of the image) */}
       <div className="relative z-20 text-center px-4 mt-12 md:mt-16 w-full pointer-events-none">
@@ -97,12 +98,12 @@ const VisionSection = () => {
 
       {/* 3. The Reveal Image (Full Screen Width) */}
       {/* FIXES:
-          1. h-[150vh]: Increased height prevents the gap at the bottom when parallax moves it up.
-          2. object-top: Ensures the top of the building is never cut off.
+          1. h-[70vh] md:h-screen & overflow-hidden: Constrains the section height so it doesn't push the next component down.
+          2. h-[calc(100%+200px)]: Gives the image just enough extra height to handle the -200px parallax scroll without leaving a gap.
           3. -mt-20 md:-mt-32: Balanced overlap so it tucks just right.
       */}
-      <div className="relative w-full -mt-20 md:-mt-32 z-10">
-        <motion.div style={{ y }} className="w-full h-[150vh]">
+      <div className="relative w-full h-[70vh] md:h-screen overflow-hidden -mt-20 md:-mt-32 z-10">
+        <motion.div style={{ y }} className="w-full h-[calc(100%+200px)]">
           <img
             src="https://optim.tildacdn.one/tild3239-3135-4431-b632-343630633965/-/format/webp/2.webp"
             alt="Luxury Architecture"
@@ -113,7 +114,7 @@ const VisionSection = () => {
 
       {/* 4. Video Lightbox */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+  <div className="fixed inset-0 z-100 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
           <button
             onClick={() => setIsVideoOpen(false)}
             className="absolute top-8 right-8 text-white hover:text-gray-300 transition-colors"
